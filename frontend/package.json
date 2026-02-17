@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview"
+    "dev": "vite",
+    "build": "./node_modules/.bin/vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "autoprefixer": "^10.4.24",

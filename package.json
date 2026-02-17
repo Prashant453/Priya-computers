@@ -1,0 +1,12 @@
+{
+    "name": "priya-computers-root",
+    "private": true,
+    "scripts": {
+        "install-frontend": "cd frontend && npm install",
+        "build-frontend": "cd frontend && npm run build"
+    },
+    "workspaces": [
+        "frontend",
+        "backend"
+    ]
+}
