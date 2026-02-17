@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 let scene, camera, renderer, cube, material;
 
@@ -88,7 +89,7 @@ const setupEventListeners = () => {
         formData.append('image', file);
 
         try {
-            const response = await fetch('http://localhost:5000/api/upload', {
+            const response = await fetch(`${API_URL}/upload`, {
                 method: 'POST',
                 body: formData
             });

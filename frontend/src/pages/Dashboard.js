@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderDashboard = () => {
     const app = document.querySelector('#app');
@@ -48,7 +49,7 @@ export const renderDashboard = () => {
 const fetchOrders = async () => {
     const token = localStorage.getItem('token');
     try {
-        const response = await fetch('http://localhost:5000/api/orders', {
+        const response = await fetch(`${API_URL}/orders`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const orders = await response.json();

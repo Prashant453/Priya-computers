@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderCart = () => {
     const app = document.querySelector('#app');
@@ -50,7 +51,7 @@ export const renderCart = () => {
 const fetchCart = async () => {
     try {
         // Mock data if backend is empty or auth not fully linked in frontend yet
-        // In real scenario: const res = await fetch('http://localhost:5000/api/cart', { headers: { Authorization: `Bearer ${token}` } });
+        // In real scenario: const res = await fetch(`${API_URL}/cart`, { headers: { Authorization: `Bearer ${token}` } });
 
         // Simulating data for preview
         const cartItems = [

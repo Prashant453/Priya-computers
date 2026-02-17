@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderShop = () => {
     const app = document.querySelector('#app');
@@ -20,7 +21,7 @@ export const renderShop = () => {
 
 const fetchProducts = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch(`${API_URL}/products`);
         const products = await response.json();
 
         const grid = document.getElementById('product-grid');

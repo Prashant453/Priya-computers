@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderProduct = () => {
     const params = new URLSearchParams(window.location.search);
@@ -34,7 +35,7 @@ export const renderProduct = () => {
 
 const fetchProductDetails = async (id) => {
     try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`);
+        const response = await fetch(`${API_URL}/products/${id}`);
         const product = await response.json();
 
         document.getElementById('product-details').innerHTML = `

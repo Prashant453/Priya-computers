@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderLogin = () => {
     const app = document.querySelector('#app');
@@ -37,7 +38,7 @@ export const renderLogin = () => {
         const errorMsg = document.getElementById('error-msg');
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${API_URL}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

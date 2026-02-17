@@ -1,5 +1,6 @@
 import { Navbar } from '../components/Navbar.js';
 import { Footer } from '../components/Footer.js';
+import { API_URL } from '../config.js';
 
 export const renderRegister = () => {
     const app = document.querySelector('#app');
@@ -42,7 +43,7 @@ export const renderRegister = () => {
         const errorMsg = document.getElementById('error-msg');
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
